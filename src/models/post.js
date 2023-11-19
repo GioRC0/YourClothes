@@ -3,24 +3,20 @@ const mongoose = require("mongoose");
 const postSchema = mongoose.Schema(
   {
     author: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
+        type: String,
         required: true,
     },
     description: {
         type: String,
-        require: true,
+        required: true,
         maxlength: 500,
     },
-    audiovisuals: [
-        {
-            data: Buffer,
-            contentType: String,
-        }
-    ],
+    photo: {
+        type: String
+    }
   },
   {
-        timestamps: true,
+    timestamps: true,
   }
 );
 
